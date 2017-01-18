@@ -1,0 +1,6 @@
+A simple library for handling and interexchange money using
+user-provided exchange rates dictionaries. The library also exports
+some basic arithmetics on money.
+
+
+
