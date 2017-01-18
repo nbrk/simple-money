@@ -54,7 +54,9 @@ instance CurrencySymbol LTC
 -- | Polymorphic type representing money
 data Money a = Money
   { amount :: Double
+  -- ^ Extract amount (i.e. quantity of the asset) from 'Money'
   , symbol :: a
+  -- ^ Extract the currency symbol from 'Money'
   } deriving (Show, Eq)
 
 
