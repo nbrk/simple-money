@@ -69,7 +69,7 @@ library
   -- Directories containing source files.
   hs-source-dirs:      src
 
-  extra-source-files: README 
+--  extra-source-files: README 
   
   -- Base language which the package is written in.
   default-language:    Haskell2010
