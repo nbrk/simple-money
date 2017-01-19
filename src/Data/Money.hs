@@ -116,12 +116,9 @@ exchangeTo ex m sy = do
   let a = (amount m) * r
   return $ Money a sy
 
--- | Construct the exchange dictionary from instances of 'CurrencySymbol'
-makeExchangeRates :: (CurrencySymbol a, CurrencySymbol b) => [((a, b), Double)] -> ExchangeRates
-makeExchangeRates rs =
-  let rs' = map (\((fc, tc), co) -> ((typeOf fc, typeOf tc), co)) rs
-  in
-    ExchangeRates $ M.fromList rs'
+-- | Construct the exchange dictionary from TypeReps of instances of 'CurrencySymbol'
+makeExchangeRates :: [((TypeRep, TypeRep), Double)] -> ExchangeRates
+makeExchangeRates rs = ExchangeRates $ M.fromList rs
 
 -- | Sample rates dictionary (19 Jan 2017)
 sampleRates :: ExchangeRates
