@@ -2,5 +2,13 @@ A simple library for handling and interexchange money using
 user-provided exchange rates dictionaries. The library also exports
 some basic arithmetics on money.
 
+~~~
+> exchangeTo sampleRates (makeUSD 1000) BTC
+Just (Money {amount = 1.1538164208845387, symbol = BTC})
 
+> makeBTC 1.2 ^* 4
+Money {amount = 4.8, symbol = BTC}
 
+> makeRUB 12500 ^+^ makeRUB 12500
+Money {amount = 25000.0, symbol = RUB}
+~~~
