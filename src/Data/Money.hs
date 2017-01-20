@@ -34,15 +34,15 @@ import Data.Typeable (Typeable, TypeRep, typeOf)
 class (Typeable a, Eq a) => CurrencySymbol a
 
 -- | U.S. Dollar
-data USD = USD deriving (Show, Typeable, Eq)
+data USD = USD deriving (Read, Show, Typeable, Eq)
 -- | Russian Ruble
-data RUB = RUB deriving (Show, Typeable, Eq)
+data RUB = RUB deriving (Read, Show, Typeable, Eq)
 -- | Euro
-data EUR = EUR deriving (Show, Typeable, Eq)
+data EUR = EUR deriving (Read, Show, Typeable, Eq)
 -- | Bitcoin
-data BTC = BTC deriving (Show, Typeable, Eq)
+data BTC = BTC deriving (Read, Show, Typeable, Eq)
 -- | Litecoin
-data LTC = LTC deriving (Show, Typeable, Eq)
+data LTC = LTC deriving (Read, Show, Typeable, Eq)
 
 -- | Currency symbols can have exchange rates
 instance CurrencySymbol USD
@@ -57,7 +57,7 @@ data Money a = Money
   -- ^ Extract amount (i.e. quantity of the asset) from 'Money'
   , symbol :: a
   -- ^ Extract the currency symbol from 'Money'
-  } deriving (Show, Eq)
+  } deriving (Read, Show, Eq)
 
 
 -- | Things that can be scaled (or shrinked) with scalars, and added (subtracted) together (like money or a mining hashrate)
